@@ -1,0 +1,10 @@
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json
+D:\Programming\Projects\C#\EmployeeApp\obj\Release\net10.0\staticwebassets.build.json

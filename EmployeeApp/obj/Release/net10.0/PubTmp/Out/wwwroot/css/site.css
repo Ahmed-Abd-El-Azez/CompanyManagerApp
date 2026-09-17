@@ -1,0 +1,94 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+/* ==========================================
+   Select2 Dark Mode Adjustments
+   ========================================== */
+
+/* Outer Selection Container */
+[data-bs-theme="dark"] .select2-container--default .select2-selection--multiple {
+    background-color: var(--bs-body-bg) !important;
+    border-color: var(--bs-border-color) !important;
+    border-radius: 8px;
+    min-height: 42px;
+}
+
+    /* Selected Tags (Badges) */
+    [data-bs-theme="dark"] .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #21262d !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #e6edf3 !important;
+        border-radius: 6px;
+        padding: 2px 8px;
+        font-size: 0.875rem;
+    }
+
+    /* Tag Close ('x') Button */
+    [data-bs-theme="dark"] .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        color: #8b949e !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+        margin-right: 6px !important;
+    }
+
+        [data-bs-theme="dark"] .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #f85149 !important;
+            background-color: transparent !important;
+        }
+
+/* Dropdown Menu Popup */
+[data-bs-theme="dark"] .select2-dropdown {
+    background-color: #161b22 !important;
+    border-color: var(--bs-border-color) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown Options List */
+[data-bs-theme="dark"] .select2-container--default .select2-results__option {
+    color: #c9d1d9 !important;
+    padding: 8px 12px;
+}
+
+/* Hovered / Focused Option */
+[data-bs-theme="dark"] .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #0071e3 !important;
+    color: #ffffff !important;
+}
+
+/* Already Selected Options in Dropdown */
+[data-bs-theme="dark"] .select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: #21262d !important;
+    color: #8b949e !important;
+}
+
+/* Embedded Search Field inside Container */
+[data-bs-theme="dark"] .select2-container--default .select2-search--inline .select2-search__field {
+    color: var(--bs-body-color) !important;
+}

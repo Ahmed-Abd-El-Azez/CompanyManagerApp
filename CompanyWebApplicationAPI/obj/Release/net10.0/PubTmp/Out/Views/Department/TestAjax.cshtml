@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Test AJAX";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 mb-0">AJAX Employee Fetch Test</h1>
+        <button id="btnLoad" class="btn btn-primary">
+            <i class="bi bi-download me-1"></i>Load Employees
+        </button>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="ps-3">ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <tr>
+                            <td colspan="4" class="text-center py-4 text-muted">
+                                Click <strong>Load Employees</strong> to fetch data via AJAX.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnLoad = document.getElementById("btnLoad");
+            const tbody = document.getElementById("employeeTableBody");
+
+            if (!btnLoad || !tbody) return;
+
+            btnLoad.addEventListener("click", function() {
+                tbody.innerHTML = `
+                            <tr>
+                                <td colspan="4" class="text-center py-4">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                </td>
+                            </tr>`;
+
+                // URL matches DepartmentController
+                fetch('/Department/GetEmployeesAjax')
+                    .then(async response => {
+                        if (response.status === 401) {
+                            window.location.href = '/Account/Login';
+                            return;
+                        }
+
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error(`HTTP ${response.status}: ${errorText || response.statusText}`);
+                        }
+
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (!data || data.length === 0) {
+                            tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-4">No employee records found.</td></tr>`;
+                            return;
+                        }
+
+                        let rows = '';
+                        data.forEach(emp => {
+                            const id = emp.employeeId ?? emp.id ?? 'N/A';
+                            const name = emp.name ?? emp.employeeName ?? 'N/A';
+                            const dept = emp.departmentName ?? 'N/A';
+                            const salary = emp.salary ? `$${emp.salary.toLocaleString()}` : '$0';
+
+                            rows += `
+                                        <tr>
+                                            <td class="fw-semibold ps-3">#${id}</td>
+                                            <td>${name}</td>
+                                            <td><span class="badge bg-secondary">${dept}</span></td>
+                                            <td class="fw-semibold text-success">${salary}</td>
+                                        </tr>`;
+                        });
+
+                        tbody.innerHTML = rows;
+                    })
+                    .catch(error => {
+                        tbody.innerHTML = `
+                                    <tr>
+                                        <td colspan="4" class="text-danger text-center py-4">
+                                            <i class="bi bi-exclamation-triangle-fill me-1"></i><strong>Error:</strong> ${error.message}
+                                        </td>
+                                    </tr>`;
+                    });
+            });
+        });
+    </script>
+}

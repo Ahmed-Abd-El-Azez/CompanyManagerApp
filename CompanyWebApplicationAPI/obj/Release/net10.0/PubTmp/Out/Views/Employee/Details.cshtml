@@ -1,0 +1,94 @@
+@model EmployeeApp.Models.ViewModels.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-dark text-white p-3 d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 fs-5 fw-bold">
+                        <i class="bi bi-person-vcard me-2"></i>Employee Details
+                    </h4>
+                    <span class="badge bg-light text-dark fs-6">ID: #@Model?.EmployeeId</span>
+                </div>
+
+                <div class="card-body p-4">
+                    <dl class="row mb-0 fs-6 gy-3">
+                        <!-- Employee Name -->
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Name)</dt>
+                        <dd class="col-sm-8 fw-bold fs-5 text-dark mb-0">@Html.DisplayFor(model => model.Name)</dd>
+
+                        <!-- Salary -->
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Salary)</dt>
+                        <dd class="col-sm-8 fw-semibold text-success mb-0">
+                            @if (Model?.Salary != null)
+                            {
+                                @Model.Salary.ToString()
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">N/A</span>
+                            }
+                        </dd>
+
+                        <!-- Department -->
+                        <dt class="col-sm-4 text-muted">Department</dt>
+                        <dd class="col-sm-8 mb-0">
+                            @if (!string.IsNullOrEmpty(Model?.DepartmentName))
+                            {
+                                <span class="badge bg-info text-dark px-3 py-2 fs-6">
+                                    <i class="bi bi-building me-1"></i>@Model.DepartmentName
+                                </span>
+                            }
+                            else if (Model?.DepartmentId != null)
+                            {
+                                <span class="badge bg-info text-dark px-3 py-2 fs-6">
+                                    <i class="bi bi-building me-1"></i>@Model.DepartmentName
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">No Department Assigned</span>
+                            }
+                        </dd>
+
+                        <!-- Assigned Projects -->
+                        <dt class="col-sm-4 text-muted">Assigned Projects</dt>
+                        <dd class="col-sm-8 mb-0">
+                            @if (Model?.Projects != null && Model.Projects.Any())
+                            {
+                                <div class="d-flex flex-wrap gap-1">
+                                    @foreach (var proj in Model.Projects)
+                                    {
+                                        <span class="badge bg-primary px-2 py-2">
+                                            <i class="bi bi-diagram-3 me-1"></i>@proj.ProjectName
+                                        </span>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">No Projects Assigned</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <hr class="my-4" />
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-3">
+                            <i class="bi bi-arrow-left me-1"></i>Back to List
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model?.EmployeeId" class="btn btn-warning px-4 fw-semibold">
+                            <i class="bi bi-pencil-square me-1"></i>Edit Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

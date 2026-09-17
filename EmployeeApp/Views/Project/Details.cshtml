@@ -1,0 +1,73 @@
+@model EmployeeApp.Models.ViewModels.ProjectViewModel
+
+@{
+    ViewData["Title"] = "Project Details";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-dark text-white p-3 d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 fs-5 fw-bold">
+                        <i class="bi bi-diagram-3 me-2"></i>Project Details
+                    </h4>
+                    <span class="badge bg-light text-dark fs-6">ID: #@Model.ProjectId</span>
+                </div>
+
+                <div class="card-body p-4">
+                    <dl class="row mb-0 fs-6 gy-3">
+                        <!-- Project Name -->
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.ProjectName)</dt>
+                        <dd class="col-sm-8 fw-bold fs-5 text-dark mb-0">@Model.ProjectName</dd>
+
+                        <!-- Start Date -->
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.StartDate)</dt>
+                        <dd class="col-sm-8 mb-0">
+                            <i class="bi bi-calendar-event text-primary me-1"></i>
+                            @Model.StartDate.ToString("MMM dd, yyyy")
+                        </dd>
+
+                        <!-- Budget -->
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Budget)</dt>
+                        <dd class="col-sm-8 fw-semibold text-success mb-0">
+                            @Model.Budget.ToString("C")
+                        </dd>
+
+                        <!-- Assigned Employees -->
+                        <dt class="col-sm-4 text-muted">Assigned Employees</dt>
+                        <dd class="col-sm-8 mb-0">
+                            @if (Model.Employees != null && Model.Employees.Any())
+                            {
+                                <div class="d-flex flex-wrap gap-2">
+                                    @foreach (var emp in Model.Employees)
+                                    {
+                                        <span class="badge bg-secondary px-2 py-2 fw-normal">
+                                            <i class="bi bi-person me-1"></i>@emp.Name
+                                        </span>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted fst-italic">No Employees Assigned</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <hr class="my-4" />
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-3">
+                            <i class="bi bi-arrow-left me-1"></i>Back to List
+                        </a>
+                        <a asp-action="Edit" asp-route-id="@Model.ProjectId" class="btn btn-warning px-4 fw-semibold">
+                            <i class="bi bi-pencil-square me-1"></i>Edit Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

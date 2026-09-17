@@ -1,0 +1,62 @@
+@model EmployeeApp.Models.ViewModels.ProjectViewModel
+
+@{
+    ViewData["Title"] = "Create Project";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-success text-white p-3">
+                    <h4 class="card-title mb-0 fs-5 fw-bold">
+                        <i class="bi bi-folder-plus me-2"></i>Create New Project
+                    </h4>
+                </div>
+
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger p-2 mb-3 small" role="alert"></div>
+
+                        <!-- Project Name -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="ProjectName" class="form-control" placeholder="Project Name" />
+                            <label asp-for="ProjectName"></label>
+                            <span asp-validation-for="ProjectName" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Start Date -->
+                        <div class="form-floating mb-3">
+                            <input asp-for="StartDate" class="form-control" type="date" placeholder="Start Date" />
+                            <label asp-for="StartDate"></label>
+                            <span asp-validation-for="StartDate" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Budget -->
+                        <div class="form-floating mb-4">
+                            <input asp-for="Budget" class="form-control" placeholder="Budget" />
+                            <label asp-for="Budget"></label>
+                            <span asp-validation-for="Budget" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex align-items-center justify-content-between pt-2">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-3">
+                                <i class="bi bi-arrow-left me-1"></i>Back to List
+                            </a>
+                            <button type="submit" class="btn btn-success px-4 fw-semibold">
+                                <i class="bi bi-check-circle me-1"></i>Create Project
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

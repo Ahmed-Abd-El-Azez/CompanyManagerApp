@@ -1,0 +1,63 @@
+@model EmployeeApp.Models.ViewModels.DepartmentViewModel
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-sm border-danger border-opacity-25 rounded-3">
+                <div class="card-header bg-danger text-white p-3">
+                    <h4 class="card-title mb-0 fs-5 fw-bold">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>Delete Department
+                    </h4>
+                </div>
+
+                <div class="card-body p-4">
+                    <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">
+                        <i class="bi bi-exclamation-circle-fill fs-4 me-2"></i>
+                        <div>
+                            Are you sure you want to delete this department? Associated employees will be unassigned.
+                        </div>
+                    </div>
+
+                    <dl class="row mb-0 fs-6">
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.DepartmentName)</dt>
+                        <dd class="col-sm-8 fw-semibold">@Html.DisplayFor(model => model.DepartmentName)</dd>
+
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Location)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Location)</dd>
+
+                        <dt class="col-sm-4 text-muted">Assigned Employees</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.EmployeeCount > 0)
+                            {
+                                <span class="badge bg-secondary">@Model.EmployeeCount Employee(s)</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">None</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <hr class="my-4" />
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="DepartmentId" />
+
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-3">
+                                <i class="bi bi-arrow-left me-1"></i>Cancel
+                            </a>
+                            <button type="submit" class="btn btn-danger px-4 fw-semibold">
+                                <i class="bi bi-trash-fill me-1"></i>Confirm Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

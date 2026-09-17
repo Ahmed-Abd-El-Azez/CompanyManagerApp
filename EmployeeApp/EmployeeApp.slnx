@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../CompanyMaster.Shared/CompanyMaster.Shared.csproj" Id="360984ae-a87b-43aa-9149-8b6ec869165b" />
+  <Project Path="../CompanyWebApplicationAPI/CompanyWebApplicationAPI.csproj" Id="22eb7e9b-bc04-49d1-9520-3fb7e885ef25" />
+  <Project Path="EmployeeApp.csproj" />
+</Solution>

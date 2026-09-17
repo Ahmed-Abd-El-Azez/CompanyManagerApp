@@ -1,0 +1,20 @@
+﻿@model EmployeeApp.Models.ViewModels.CompanyDataViewModel
+
+<div class="bg-body-tertiary p-4 rounded-3 border shadow-sm mb-4">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-md-4">
+                <h6 class="text-body-secondary fw-medium">Total Employees</h6>
+                <p class="fs-4 fw-bold text-primary mb-0">@Model.TotalEmployees</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-body-secondary fw-medium">Total Departments</h6>
+                <p class="fs-4 fw-bold text-info mb-0">@Model.TotalDepartments</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-body-secondary fw-medium">Average Salary</h6>
+                <p class="fs-4 fw-bold text-success mb-0">@Model.AverageSalary.ToString()</p>
+            </div>
+        </div>
+    </div>
+</div>

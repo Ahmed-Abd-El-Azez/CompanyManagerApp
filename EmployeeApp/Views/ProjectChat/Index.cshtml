@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Project Management AI Chatbot";
+}
+
+<div class="container mt-4" style="max-width: 750px;">
+    <h3>Project Management Assistant</h3>
+    
+    <div id="chatBox" class="border rounded p-3 mb-3 bg-light" style="height: 400px; overflow-y: auto;">
+        <div class="p-2 mb-2 bg-white rounded shadow-sm">
+            <strong>Bot:</strong> Hello! Ask me anything about your project schedules, tasks, or resource planning.
+        </div>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="userMsg" class="form-control" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendChat()" />
+        <button class="btn btn-primary" onclick="sendChat()">Send</button>
+    </div>
+</div>
+
+<script>
+    const sessionId = "session_" + Math.random().toString(36).substring(2, 9);
+
+    async function sendChat() {
+        const input = document.getElementById("userMsg");
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        const chatBox = document.getElementById("chatBox");
+
+        // Display user query
+        chatBox.innerHTML += `<div class="text-end p-2 mb-2 bg-primary text-white rounded ms-auto" style="max-width: 75%;"><strong>You:</strong> ${escapeHtml(msg)}</div>`;
+        input.value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Display thinking placeholder
+        const tempId = "loading_" + Date.now();
+        chatBox.innerHTML += `<div id="${tempId}" class="p-2 mb-2 bg-white rounded shadow-sm"><em>Thinking...</em></div>`;
+
+        try {
+            const res = await fetch('/ProjectChat/SendMessage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ sessionId: sessionId, message: msg })
+            });
+            const data = await res.json();
+            document.getElementById(tempId).remove();
+
+            if (data.success) {
+                chatBox.innerHTML += `<div class="p-2 mb-2 bg-white rounded shadow-sm" style="max-width: 75%;"><strong>Bot:</strong> <pre style="white-space: pre-wrap; margin:0; font-family: inherit;">${escapeHtml(data.output)}</pre></div>`;
+            } else {
+                chatBox.innerHTML += `<div class="p-2 mb-2 bg-danger text-white rounded"><strong>Error:</strong> ${escapeHtml(data.errorMessage)}</div>`;
+            }
+        } catch {
+            document.getElementById(tempId).remove();
+            chatBox.innerHTML += `<div class="text-danger p-2">Connection failed.</div>`;
+        }
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+</script>
