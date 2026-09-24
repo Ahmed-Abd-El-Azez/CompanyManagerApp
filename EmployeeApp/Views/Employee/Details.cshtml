@@ -7,19 +7,22 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-7">
-            <div class="card shadow-sm border-0 rounded-3">
-                <div class="card-header bg-dark text-white p-3 d-flex align-items-center justify-content-between">
+            <div class="card shadow-sm border rounded-3">
+                <!-- Swapped bg-dark to bg-body-tertiary with bottom border for dynamic theme support -->
+                <div class="card-header bg-body-tertiary text-body p-3 d-flex align-items-center justify-content-between border-bottom">
                     <h4 class="card-title mb-0 fs-5 fw-bold">
                         <i class="bi bi-person-vcard me-2"></i>Employee Details
                     </h4>
-                    <span class="badge bg-light text-dark fs-6">ID: #@Model?.EmployeeId</span>
+                    <!-- Updated badge to theme-aware surface classes -->
+                    <span class="badge bg-body-secondary text-body border fs-6">ID: #@Model?.EmployeeId</span>
                 </div>
 
                 <div class="card-body p-4">
                     <dl class="row mb-0 fs-6 gy-3">
                         <!-- Employee Name -->
                         <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Name)</dt>
-                        <dd class="col-sm-8 fw-bold fs-5 text-dark mb-0">@Html.DisplayFor(model => model.Name)</dd>
+                        <!-- Changed text-dark to text-body -->
+                        <dd class="col-sm-8 fw-bold fs-5 text-body mb-0">@Html.DisplayFor(model => model.Name)</dd>
 
                         <!-- Salary -->
                         <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Salary)</dt>
@@ -39,13 +42,14 @@
                         <dd class="col-sm-8 mb-0">
                             @if (!string.IsNullOrEmpty(Model?.DepartmentName))
                             {
-                                <span class="badge bg-info text-dark px-3 py-2 fs-6">
+                                <!-- Swapped bg-info text-dark to theme-friendly subtle utility classes -->
+                                <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle px-3 py-2 fs-6">
                                     <i class="bi bi-building me-1"></i>@Model.DepartmentName
                                 </span>
                             }
                             else if (Model?.DepartmentId != null)
                             {
-                                <span class="badge bg-info text-dark px-3 py-2 fs-6">
+                                <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle px-3 py-2 fs-6">
                                     <i class="bi bi-building me-1"></i>@Model.DepartmentName
                                 </span>
                             }

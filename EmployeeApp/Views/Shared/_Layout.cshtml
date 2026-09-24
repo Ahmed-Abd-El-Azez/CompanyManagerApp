@@ -8,12 +8,12 @@
 
     <!-- Prevent FOUC (Flash of Unstyled Content) -->
     <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme || (systemDark ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-bs-theme', theme);
-        })();
+            (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme || (systemDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-bs-theme', theme);
+            })();
     </script>
 
     <!-- Fonts & Icons -->
@@ -28,94 +28,96 @@
     <link rel="stylesheet" href="~/EmployeeApp.styles.css" asp-append-version="true" />
 
     <style>
-        :root {
-            --app-bg: #f5f5f7;
-            --navbar-bg: rgba(255, 255, 255, 0.85);
-            --card-bg: #ffffff;
-            --border-color: rgba(0, 0, 0, 0.08);
-            --user-chip-bg: #eef2ff;
-            --user-chip-color: #3730a3;
-        }
+            :root {
+                --app-bg: #f5f5f7;
+                --navbar-bg: rgba(255, 255, 255, 0.85);
+                --card-bg: #ffffff;
+                --border-color: rgba(0, 0, 0, 0.08);
+                --user-chip-bg: #eef2ff;
+                --user-chip-color: #3730a3;
+            }
 
-        [data-bs-theme="dark"] {
-            --app-bg: #0d1117;
-            --navbar-bg: rgba(13, 17, 23, 0.85);
-            --card-bg: #161b22;
-            --border-color: rgba(255, 255, 255, 0.12);
-            --user-chip-bg: rgba(99, 102, 241, 0.2);
-            --user-chip-color: #a5b4fc;
-        }
+            [data-bs-theme="dark"] {
+                --app-bg: #0d1117;
+                --navbar-bg: rgba(13, 17, 23, 0.85);
+                --card-bg: #161b22;
+                --border-color: rgba(255, 255, 255, 0.12);
+                --user-chip-bg: rgba(99, 102, 241, 0.2);
+                --user-chip-color: #a5b4fc;
+            }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--app-bg);
-            transition: background-color 0.25s ease, color 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                background-color: var(--app-bg);
+                transition: background-color 0.25s ease, color 0.25s ease;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
 
-        .navbar {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            background-color: var(--navbar-bg) !important;
-            border-bottom: 1px solid var(--border-color) !important;
-            transition: background-color 0.25s ease, border-color 0.25s ease;
-        }
+            .navbar {
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                background-color: var(--navbar-bg) !important;
+                border-bottom: 1px solid var(--border-color) !important;
+                transition: background-color 0.25s ease, border-color 0.25s ease;
+            }
 
-        .nav-link {
-            font-weight: 500;
-            padding: 0.4rem 0.85rem !important;
-            border-radius: 980px;
-            transition: all 0.15s ease-in-out;
-        }
+            .nav-link {
+                font-weight: 500;
+                padding: 0.4rem 0.85rem !important;
+                border-radius: 980px;
+                color: var(--bs-nav-link-color);
+                transition: all 0.15s ease-in-out;
+            }
 
-        .nav-link:hover, .nav-link:focus {
-            background-color: rgba(13, 110, 253, 0.08);
-        }
+                .nav-link:hover, .nav-link:focus {
+                    color: var(--bs-nav-link-hover-color);
+                    background-color: var(--bs-tertiary-bg);
+                }
 
-        .user-chip {
-            background-color: var(--user-chip-bg);
-            color: var(--user-chip-color);
-            font-weight: 600;
-            padding: 0.35rem 0.85rem;
-            border-radius: 50rem;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 140px;
-            min-width: 0;
-        }
+            .user-chip {
+                background-color: var(--user-chip-bg);
+                color: var(--user-chip-color);
+                font-weight: 600;
+                padding: 0.35rem 0.85rem;
+                border-radius: 50rem;
+                font-size: 0.85rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 140px;
+                min-width: 0;
+            }
 
-        .theme-toggle-btn {
-            border: 1px solid var(--border-color);
-            background: transparent;
-            color: var(--bs-body-color);
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+            .theme-toggle-btn {
+                border: 1px solid var(--border-color);
+                background: transparent;
+                color: var(--bs-body-color);
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
 
-        .theme-toggle-btn:hover {
-            background-color: rgba(125, 125, 125, 0.15);
-            transform: scale(1.05);
-        }
+                .theme-toggle-btn:hover {
+                    background-color: rgba(125, 125, 125, 0.15);
+                    transform: scale(1.05);
+                }
 
-        main {
-            flex: 1;
-        }
+            main {
+                flex: 1;
+            }
 
-        footer {
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-color) !important;
-            transition: background-color 0.25s ease;
-        }
+            footer {
+                background-color: var(--card-bg);
+                border-top: 1px solid var(--border-color) !important;
+                transition: background-color 0.25s ease;
+            }
     </style>
 </head>
 <body>
@@ -169,7 +171,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ProjectChat" asp-action="Index">
+                            <a class="nav-link d-flex align-items-center gap-1.5" asp-area="" asp-controller="ProjectChat" asp-action="Index">
                                 <i class="bi bi-robot"></i> AI Assistant
                             </a>
                         </li>
@@ -212,6 +214,7 @@
                             </a>
                         }
                     </div>
+                </div>
             </div>
         </nav>
     </header>
@@ -240,31 +243,31 @@
 
     <!-- Theme Switcher Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleBtn = document.getElementById('themeToggleBtn');
-            const themeIcon = document.getElementById('themeIcon');
-            const htmlElement = document.documentElement;
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleBtn = document.getElementById('themeToggleBtn');
+                const themeIcon = document.getElementById('themeIcon');
+                const htmlElement = document.documentElement;
 
-            const updateIcon = (theme) => {
-                if (theme === 'dark') {
-                    themeIcon.className = 'bi bi-sun-fill text-warning';
-                } else {
-                    themeIcon.className = 'bi bi-moon-stars-fill';
-                }
-            };
+                const updateIcon = (theme) => {
+                    if (theme === 'dark') {
+                        themeIcon.className = 'bi bi-sun-fill text-warning';
+                    } else {
+                        themeIcon.className = 'bi bi-moon-stars-fill';
+                    }
+                };
 
-            // Initial icon update on load
-            updateIcon(htmlElement.getAttribute('data-bs-theme'));
+                // Initial icon update on load
+                updateIcon(htmlElement.getAttribute('data-bs-theme'));
 
-            toggleBtn.addEventListener('click', () => {
-                const currentTheme = htmlElement.getAttribute('data-bs-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                toggleBtn.addEventListener('click', () => {
+                    const currentTheme = htmlElement.getAttribute('data-bs-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-                htmlElement.setAttribute('data-bs-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateIcon(newTheme);
+                    htmlElement.setAttribute('data-bs-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    updateIcon(newTheme);
+                });
             });
-        });
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)

@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|d:\\programming\\projects\\c#\\companyapp\\employeeapp\\views\\project\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|solutionrelative:views\\project\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|d:\\programming\\projects\\c#\\companyapp\\employeeapp\\views\\department\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|solutionrelative:views\\department\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|d:\\programming\\projects\\c#\\companyapp\\employeeapp\\views\\employee\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|solutionrelative:views\\employee\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|d:\\programming\\projects\\c#\\companyapp\\employeeapp\\views\\projectchat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|solutionrelative:views\\projectchat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|d:\\programming\\projects\\c#\\companyapp\\employeeapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5ACB49E9-ADF0-76C0-12DC-76D358277FB1}|EmployeeApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Project\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Project\\Details.cshtml",
+              "ToolTip": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Project\\Details.cshtml",
+              "RelativeToolTip": "Views\\Project\\Details.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-24T11:45:39.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Department\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Department\\Details.cshtml",
+              "ToolTip": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Department\\Details.cshtml",
+              "RelativeToolTip": "Views\\Department\\Details.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAAEAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-24T11:29:59.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Employee\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Employee\\Details.cshtml",
+              "ToolTip": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Employee\\Details.cshtml",
+              "RelativeToolTip": "Views\\Employee\\Details.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAswGEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-24T11:29:12.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\ProjectChat\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ProjectChat\\Index.cshtml",
+              "ToolTip": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\ProjectChat\\Index.cshtml",
+              "RelativeToolTip": "Views\\ProjectChat\\Index.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAswEEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-24T11:28:48.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Programming\\Projects\\C#\\CompanyApp\\EmployeeApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAswAEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-24T11:27:58.862Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

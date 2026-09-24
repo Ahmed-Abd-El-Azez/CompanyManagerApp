@@ -426,3 +426,4 @@ D:\Programming\Projects\C#\CompanyApp\CompanyWebApplicationAPI\obj\Debug\net10.0
 D:\Programming\Projects\C#\CompanyApp\CompanyWebApplicationAPI\obj\Debug\net10.0\CompanyWebApplicationAPI.pdb
 D:\Programming\Projects\C#\CompanyApp\CompanyWebApplicationAPI\obj\Debug\net10.0\CompanyWebApplicationAPI.genruntimeconfig.cache
 D:\Programming\Projects\C#\CompanyApp\CompanyWebApplicationAPI\obj\Debug\net10.0\ref\CompanyWebApplicationAPI.dll
+D:\Programming\Projects\C#\CompanyApp\CompanyWebApplicationAPI\obj\Debug\net10.0\CompanyWebApplicationAPI.sourcelink.json

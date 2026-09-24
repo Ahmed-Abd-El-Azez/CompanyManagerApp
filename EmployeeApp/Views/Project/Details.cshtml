@@ -7,19 +7,22 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-7">
-            <div class="card shadow-sm border-0 rounded-3">
-                <div class="card-header bg-dark text-white p-3 d-flex align-items-center justify-content-between">
+            <div class="card shadow-sm border rounded-3">
+                <!-- Changed bg-dark to bg-body-tertiary with bottom border for dynamic theme support -->
+                <div class="card-header bg-body-tertiary text-body p-3 d-flex align-items-center justify-content-between border-bottom">
                     <h4 class="card-title mb-0 fs-5 fw-bold">
                         <i class="bi bi-diagram-3 me-2"></i>Project Details
                     </h4>
-                    <span class="badge bg-light text-dark fs-6">ID: #@Model.ProjectId</span>
+                    <!-- Updated badge to theme-aware surface classes -->
+                    <span class="badge bg-body-secondary text-body border fs-6">ID: #@Model.ProjectId</span>
                 </div>
 
                 <div class="card-body p-4">
                     <dl class="row mb-0 fs-6 gy-3">
                         <!-- Project Name -->
                         <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.ProjectName)</dt>
-                        <dd class="col-sm-8 fw-bold fs-5 text-dark mb-0">@Model.ProjectName</dd>
+                        <!-- Changed text-dark to text-body -->
+                        <dd class="col-sm-8 fw-bold fs-5 text-body mb-0">@Model.ProjectName</dd>
 
                         <!-- Start Date -->
                         <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.StartDate)</dt>
@@ -42,7 +45,8 @@
                                 <div class="d-flex flex-wrap gap-2">
                                     @foreach (var emp in Model.Employees)
                                     {
-                                        <span class="badge bg-secondary px-2 py-2 fw-normal">
+                                        <!-- Updated badge to secondary-subtle for improved contrast in dark mode -->
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle px-2 py-2 fw-normal">
                                             <i class="bi bi-person me-1"></i>@emp.Name
                                         </span>
                                     }

@@ -20,3 +20,4 @@ D:\Programming\Projects\C#\CompanyApp\CompanyMaster.Shared\obj\Debug\net10.0\Com
 D:\Programming\Projects\C#\CompanyApp\CompanyMaster.Shared\obj\Debug\net10.0\refint\CompanyMaster.Shared.dll
 D:\Programming\Projects\C#\CompanyApp\CompanyMaster.Shared\obj\Debug\net10.0\CompanyMaster.Shared.pdb
 D:\Programming\Projects\C#\CompanyApp\CompanyMaster.Shared\obj\Debug\net10.0\ref\CompanyMaster.Shared.dll
+D:\Programming\Projects\C#\CompanyApp\CompanyMaster.Shared\obj\Debug\net10.0\CompanyMaster.Shared.sourcelink.json

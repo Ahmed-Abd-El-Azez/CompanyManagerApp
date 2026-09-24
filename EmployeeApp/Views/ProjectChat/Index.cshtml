@@ -3,10 +3,12 @@
 }
 
 <div class="container mt-4" style="max-width: 750px;">
-    <h3>Project Management Assistant</h3>
+    <h3 class="mb-3">Project Management Assistant</h3>
     
-    <div id="chatBox" class="border rounded p-3 mb-3 bg-light" style="height: 400px; overflow-y: auto;">
-        <div class="p-2 mb-2 bg-white rounded shadow-sm">
+    <!-- Changed bg-light to bg-body-tertiary for dynamic dark/light theme background -->
+    <div id="chatBox" class="border rounded p-3 mb-3 bg-body-tertiary" style="height: 400px; overflow-y: auto;">
+        <!-- Changed bg-white to bg-body-secondary -->
+        <div class="p-2 mb-2 bg-body-secondary rounded shadow-sm" style="max-width: 75%;">
             <strong>Bot:</strong> Hello! Ask me anything about your project schedules, tasks, or resource planning.
         </div>
     </div>
@@ -32,9 +34,9 @@
         input.value = "";
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        // Display thinking placeholder
+        // Display thinking placeholder using bg-body-secondary
         const tempId = "loading_" + Date.now();
-        chatBox.innerHTML += `<div id="${tempId}" class="p-2 mb-2 bg-white rounded shadow-sm"><em>Thinking...</em></div>`;
+        chatBox.innerHTML += `<div id="${tempId}" class="p-2 mb-2 bg-body-secondary rounded shadow-sm" style="max-width: 75%;"><em>Thinking...</em></div>`;
 
         try {
             const res = await fetch('/ProjectChat/SendMessage', {
@@ -46,9 +48,10 @@
             document.getElementById(tempId).remove();
 
             if (data.success) {
-                chatBox.innerHTML += `<div class="p-2 mb-2 bg-white rounded shadow-sm" style="max-width: 75%;"><strong>Bot:</strong> <pre style="white-space: pre-wrap; margin:0; font-family: inherit;">${escapeHtml(data.output)}</pre></div>`;
+                // Dynamically injected bot message using theme-aware bg-body-secondary
+                chatBox.innerHTML += `<div class="p-2 mb-2 bg-body-secondary rounded shadow-sm" style="max-width: 75%;"><strong>Bot:</strong> <pre style="white-space: pre-wrap; margin:0; font-family: inherit; color: inherit;">${escapeHtml(data.output)}</pre></div>`;
             } else {
-                chatBox.innerHTML += `<div class="p-2 mb-2 bg-danger text-white rounded"><strong>Error:</strong> ${escapeHtml(data.errorMessage)}</div>`;
+                chatBox.innerHTML += `<div class="p-2 mb-2 bg-danger text-white rounded" style="max-width: 75%;"><strong>Error:</strong> ${escapeHtml(data.errorMessage)}</div>`;
             }
         } catch {
             document.getElementById(tempId).remove();
